@@ -103,6 +103,10 @@ async function run() {
       const result = await classesCollection.insertOne(newClass);
       res.send(result);
     });
+
+    app.get('/',(req,res)=>{
+      res.end("Smart Class Hub server is running")
+    })
     
     app.get('/classes',async(req,res)=>{
       const query = {status:"approved"};
